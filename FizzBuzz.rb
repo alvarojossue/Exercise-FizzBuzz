@@ -1,23 +1,31 @@
 for num in 1..100
- if num % 3 == 0 && num % 5 == 0 && num > 9 && num < 20
-     puts "FizzBuzzBang"
-    elsif num % 3 == 0 && num > 9 && num < 20
-        puts "FizzBang"
-    elsif num % 5 == 0 && num > 9 && num < 20
-        puts "BuzzBang"
-    elsif num == 100
-        puts "BuzzBang"
-    elsif num % 3 == 0 && num % 5 == 0
-        puts "FizzBuzz"
-    elsif num % 5 == 0
-        puts "Buzz"
-    elsif num % 3 == 0
-        puts "Fizz"
-    elsif num > 9 && num < 20
-        puts "Bang"
-    elsif num == 1
-        puts "Bang"
-    else
-        puts "#{num}"
-    end
+result = ""
+if num % 3 == 0
+    result = result + "Fizz"
+end
+if num % 3 == 0 && num % 5 == 0
+    result = result + "Buzz"
+end
+if num % 3 == 0 && num % 5 == 0 && (num > 9 && num < 20)
+    result = result + "Bang"
+end
+if num % 3 == 0 && (num > 9 && num < 20) && num != 15
+    result = "FizzBang"
+end
+if num % 5 == 0 && num !=15 && num % 3 != 0
+    result = "Buzz"
+end
+if (num % 5 == 0 && (num > 9 && num < 20) && num !=15) || num == 100
+    result = result + "Bang"
+end
+if (num > 9 && num < 20) && num % 3 != 0 && num % 5 != 0  || num == 1
+    result = "Bang"
+end
+if (num % 3 != 0) && (num % 5 !=0) && (num >= 2 && num <=9)
+    print "#{num}"
+end
+if (num % 3 != 0) && (num % 5 !=0) && (num >= 20)
+    print "#{num}"
+end
+    puts "#{result}"
 end
